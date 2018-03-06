@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C00A613204E74D50090E0F9 /* Barbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C00A612204E74D50090E0F9 /* Barbers.swift */; };
 		1C253046204929BF000402C0 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C253045204929BF000402C0 /* SignUpScreen.swift */; };
 		1C563EAC204A68C5007EA163 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C563EAB204A68C5007EA163 /* HomeScreen.swift */; };
 		1C563EAE204A7856007EA163 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C563EAD204A7856007EA163 /* ProfileScreen.swift */; };
 		1C563EB0204A819B007EA163 /* CreateHaircutSessionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C563EAF204A819B007EA163 /* CreateHaircutSessionScreen.swift */; };
-		1C563EB7204D2F52007EA163 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C563EB3204D2F51007EA163 /* Bolts.framework */; };
-		1C563EB8204D2F52007EA163 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C563EB4204D2F52007EA163 /* FBSDKCoreKit.framework */; };
-		1C563EB9204D2F52007EA163 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C563EB5204D2F52007EA163 /* FBSDKLoginKit.framework */; };
-		1C563EBA204D2F52007EA163 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C563EB6204D2F52007EA163 /* FBSDKShareKit.framework */; };
 		1CD589002047C8B00033D957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD588FF2047C8B00033D957 /* AppDelegate.swift */; };
 		1CD589052047C8B00033D957 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD589032047C8B00033D957 /* Main.storyboard */; };
 		1CD589072047C8B00033D957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CD589062047C8B00033D957 /* Assets.xcassets */; };
@@ -47,14 +44,11 @@
 
 /* Begin PBXFileReference section */
 		0458E9A5AD5CE89051C92CC2 /* Pods_HaircutAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HaircutAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C00A612204E74D50090E0F9 /* Barbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barbers.swift; sourceTree = "<group>"; };
 		1C253045204929BF000402C0 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		1C563EAB204A68C5007EA163 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		1C563EAD204A7856007EA163 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		1C563EAF204A819B007EA163 /* CreateHaircutSessionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHaircutSessionScreen.swift; sourceTree = "<group>"; };
-		1C563EB3204D2F51007EA163 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "FacebookSDKs-iOS-4/Bolts.framework"; sourceTree = "<group>"; };
-		1C563EB4204D2F52007EA163 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "FacebookSDKs-iOS-4/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		1C563EB5204D2F52007EA163 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "FacebookSDKs-iOS-4/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
-		1C563EB6204D2F52007EA163 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "FacebookSDKs-iOS-4/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		1CD588FC2047C8B00033D957 /* HaircutApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaircutApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD588FF2047C8B00033D957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CD589042047C8B00033D957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,10 +79,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2ED3FF79FCFA35CC9724A2 /* Pods_HaircutApp.framework in Frameworks */,
-				1C563EB8204D2F52007EA163 /* FBSDKCoreKit.framework in Frameworks */,
-				1C563EBA204D2F52007EA163 /* FBSDKShareKit.framework in Frameworks */,
-				1C563EB9204D2F52007EA163 /* FBSDKLoginKit.framework in Frameworks */,
-				1C563EB7204D2F52007EA163 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +131,7 @@
 				1CD589302047D4440033D957 /* LoginScreen.swift */,
 				1C563EAB204A68C5007EA163 /* HomeScreen.swift */,
 				1C563EAF204A819B007EA163 /* CreateHaircutSessionScreen.swift */,
+				1C00A612204E74D50090E0F9 /* Barbers.swift */,
 				1C563EAD204A7856007EA163 /* ProfileScreen.swift */,
 				1C253045204929BF000402C0 /* SignUpScreen.swift */,
 				1CD589062047C8B00033D957 /* Assets.xcassets */,
@@ -172,10 +163,6 @@
 		88E39DE533535B20AF7FE8AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C563EB3204D2F51007EA163 /* Bolts.framework */,
-				1C563EB4204D2F52007EA163 /* FBSDKCoreKit.framework */,
-				1C563EB5204D2F52007EA163 /* FBSDKLoginKit.framework */,
-				1C563EB6204D2F52007EA163 /* FBSDKShareKit.framework */,
 				F1703BDBADCA1A52F98DD533 /* Pods_HaircutApp.framework */,
 				0458E9A5AD5CE89051C92CC2 /* Pods_HaircutAppTests.framework */,
 				3EE1C90A06E917C5D4201FF1 /* Pods_HaircutAppUITests.framework */,
@@ -510,6 +497,7 @@
 				1C253046204929BF000402C0 /* SignUpScreen.swift in Sources */,
 				1C563EB0204A819B007EA163 /* CreateHaircutSessionScreen.swift in Sources */,
 				1C563EAE204A7856007EA163 /* ProfileScreen.swift in Sources */,
+				1C00A613204E74D50090E0F9 /* Barbers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

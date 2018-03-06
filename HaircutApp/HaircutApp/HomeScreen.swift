@@ -8,6 +8,9 @@
 
 import UIKit
 import MapKit
+import Firebase
+import FirebaseDatabase
+
 
 class HomeScreen: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -15,11 +18,54 @@ class HomeScreen: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
     
     let locationManager = CLLocationManager()
     var annotations = [MKPointAnnotation]()
+    var databaseRef : DatabaseReference?
+    var barbers : Barbers?
+    
+    let currentLatitude = 35.300066
+    let currentLongitude = -120.662065
+    let client_id = "ZKJ1MMDJU5SI5JL10UDBLDWLDSB0ZHCWXZFMRASNX1RBIB1A"
+    let client_secret = "KCMAVC1ZZFSQS25TIUDE4KTGFPVEFZOXYB13PWC5X3UBCKIV"
+    let venue_id = "4bf58dd8d48988d110951735"
+    
+    let barberData = "https://api.foursquare.com/v2/venues/search?client_id=ZKJ1MMDJU5SI5JL10UDBLDWLDSB0ZHCWXZFMRASNX1RBIB1A&client_secret=KCMAVC1ZZFSQS25TIUDE4KTGFPVEFZOXYB13PWC5X3UBCKIV&ll=35.3,-120.6&query=barber&v=20180301"
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initLocationManager()
+        
+        databaseRef = Database.database().reference().child("response")
+        
+        mapView.delegate = self
+        
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        
+        let request = URLRequest(url: URL(string: barberData)!)
+        
+        let task: URLSessionDataTask = session.dataTask(with: request)
+        { (receivedData, response, error) -> Void in
+            
+            if let data = receivedData {
+                do {
+                    let decoder = JSONDecoder()
+                    let allBarbers = try decoder.decode(Barbers.self, from: data)
+                    
+                    for barber in allBarbers.response {
+                        print("Barber Found!")
+                        print(barber.name!)
+                        self.databaseRef?.child(barber.name!).setValue(barber.toAnyObject())
+                    }
+                    
+                    self.barbers = allBarbers
+                    
+                } catch {
+                    print("Exception on Decode: \(error)")
+                }
+            }
+        }
+        task.resume()
     }
     
     // Segues

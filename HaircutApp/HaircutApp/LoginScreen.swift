@@ -53,7 +53,21 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     //everything works print the user data
-                    print(result ?? "")
+                    //print(result ?? "")
+                    let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                    
+                    Auth.auth().signIn(with: credential) { (user, error) in
+                        if error == nil {
+                            self.performSegue(withIdentifier: "toHomeScreen", sender: self)
+                        }
+                        else {
+                            let alertController = UIAlertController(title: "Oops!", message: error?.localizedDescription, preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            alertController.addAction(defaultAction)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                        
+                    }
                 }
             })
         }

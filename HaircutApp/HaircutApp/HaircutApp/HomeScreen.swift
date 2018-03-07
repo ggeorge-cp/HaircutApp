@@ -50,15 +50,13 @@ class HomeScreen: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
             if let data = receivedData {
                 do {
                     let decoder = JSONDecoder()
-                    let allBarbers = try decoder.decode(Barbers.self, from: data)
+                    let haircutVenueService = try decoder.decode(HaircutVenueService.self, from: data)
+                    self.barbers = haircutVenueService.response
                     
-                    for barber in allBarbers.response {
-                        print("Barber Found!")
+                    for barber in (self.barbers?.venues)! {
                         print(barber.name!)
                         self.databaseRef?.child(barber.name!).setValue(barber.toAnyObject())
                     }
-                    
-                    self.barbers = allBarbers
                     
                 } catch {
                     print("Exception on Decode: \(error)")

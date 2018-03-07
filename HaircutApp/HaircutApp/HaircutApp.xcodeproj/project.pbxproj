@@ -22,6 +22,7 @@
 		1CD589312047D4440033D957 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD589302047D4440033D957 /* LoginScreen.swift */; };
 		5C20F7B78A26362E1FE13090 /* Pods_HaircutAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0458E9A5AD5CE89051C92CC2 /* Pods_HaircutAppTests.framework */; };
 		BF2ED3FF79FCFA35CC9724A2 /* Pods_HaircutApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1703BDBADCA1A52F98DD533 /* Pods_HaircutApp.framework */; };
+		CB4D99A9205073100077D9A4 /* HaircutVenueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D99A8205073100077D9A4 /* HaircutVenueService.swift */; };
 		CE8DA98B7B0635517516A80A /* Pods_HaircutAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE1C90A06E917C5D4201FF1 /* Pods_HaircutAppUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		6830C7FCF647DAB33B7D3681 /* Pods-HaircutApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaircutApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaircutApp/Pods-HaircutApp.release.xcconfig"; sourceTree = "<group>"; };
 		7F49ECE491660DCE632F416C /* Pods-HaircutAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaircutAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaircutAppTests/Pods-HaircutAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ABC7E526C7D6670E3E0D6C55 /* Pods-HaircutAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaircutAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaircutAppUITests/Pods-HaircutAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CB4D99A8205073100077D9A4 /* HaircutVenueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaircutVenueService.swift; sourceTree = "<group>"; };
 		F1703BDBADCA1A52F98DD533 /* Pods_HaircutApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HaircutApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8AE47077D1535B47B627FC9 /* Pods-HaircutAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaircutAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaircutAppTests/Pods-HaircutAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +134,7 @@
 				1C563EAB204A68C5007EA163 /* HomeScreen.swift */,
 				1C563EAF204A819B007EA163 /* CreateHaircutSessionScreen.swift */,
 				1C00A612204E74D50090E0F9 /* Barbers.swift */,
+				CB4D99A8205073100077D9A4 /* HaircutVenueService.swift */,
 				1C563EAD204A7856007EA163 /* ProfileScreen.swift */,
 				1C253045204929BF000402C0 /* SignUpScreen.swift */,
 				1CD589062047C8B00033D957 /* Assets.xcassets */,
@@ -491,6 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4D99A9205073100077D9A4 /* HaircutVenueService.swift in Sources */,
 				1C563EAC204A68C5007EA163 /* HomeScreen.swift in Sources */,
 				1CD589002047C8B00033D957 /* AppDelegate.swift in Sources */,
 				1CD589312047D4440033D957 /* LoginScreen.swift in Sources */,

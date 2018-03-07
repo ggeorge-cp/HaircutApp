@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 struct Barbers : Codable {
     
-    let response : [Barber]
+    let venues : [Barber]
     
     struct Barber : Codable {
         var name : String?

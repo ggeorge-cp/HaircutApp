@@ -14,6 +14,14 @@ import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    /*
+     * Still working on one last page. This page will pop up when a person clicks on a pin on the map. It will
+     * then navigate users to a page where they can book an appointment set up by a barber.
+     *
+     * Another NOTE: Foursquare API that has info on barber shops in the users area has been implemented in Firebase and the
+     * data gets printed to the console.
+     */
 
     var window: UIWindow?
 

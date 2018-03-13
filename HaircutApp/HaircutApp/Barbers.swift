@@ -8,6 +8,75 @@
 
 import Foundation
 import FirebaseDatabase
+import MapKit
+
+class BarbersClass : NSObject, MKAnnotation {
+    
+    let ref: DatabaseReference?
+    var name : String
+    var city : String
+    var latitude : Double
+    var longitude : Double
+    
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+    
+    var title: String? {
+        return name
+    }
+    
+    var subtitle: String? {
+        return city
+    }
+
+    init(name: String, city: String) {
+        self.name = name
+        self.city = city
+        self.latitude = 0
+        self.longitude = 0
+        ref = nil
+        
+        super.init()
+    }
+    
+    init(key : String, snapshot: DataSnapshot) {
+        name = key
+        
+        let snaptemp = snapshot.value as! [String : AnyObject]
+        let snapvalues = snaptemp[key] as! [String : AnyObject]
+        
+        city = snapvalues["city"] as? String ?? "N/A"
+        latitude = snapvalues["lat"] as? Double ?? 0.0
+        longitude = snapvalues["lng"] as? Double ?? 0.0
+        
+        ref = snapshot.ref
+        
+        super.init()
+    }
+    
+    init(snapshot: DataSnapshot) {
+        let snapvalues = snapshot.value as! [String : AnyObject]
+        
+        name = snapvalues["name"] as? String ?? "N/A"
+        city = snapvalues["city"] as? String ?? "N/A"
+        latitude = snapvalues["lat"] as? Double ?? 0.0
+        longitude = snapvalues["lng"] as? Double ?? 0.0
+        
+        ref = snapshot.ref
+        
+        super.init()
+    }
+    
+    func toAnyObject() -> Any {
+        return [
+            "name" : name,
+            "city" : city,
+            "lat" : latitude,
+            "lng" : longitude
+        ]
+    }
+}
 
 struct Barbers : Codable {
     

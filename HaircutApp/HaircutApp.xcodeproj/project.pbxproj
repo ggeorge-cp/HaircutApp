@@ -12,6 +12,8 @@
 		1C563EAC204A68C5007EA163 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C563EAB204A68C5007EA163 /* HomeScreen.swift */; };
 		1C563EAE204A7856007EA163 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C563EAD204A7856007EA163 /* ProfileScreen.swift */; };
 		1C563EB0204A819B007EA163 /* CreateHaircutSessionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C563EAF204A819B007EA163 /* CreateHaircutSessionScreen.swift */; };
+		1C911766205786B700F97C72 /* BusinessInfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C911765205786B700F97C72 /* BusinessInfoScreen.swift */; };
+		1C91176820579E5300F97C72 /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C91176720579E5300F97C72 /* SettingScreen.swift */; };
 		1CD589002047C8B00033D957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD588FF2047C8B00033D957 /* AppDelegate.swift */; };
 		1CD589052047C8B00033D957 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CD589032047C8B00033D957 /* Main.storyboard */; };
 		1CD589072047C8B00033D957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CD589062047C8B00033D957 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		1C563EAB204A68C5007EA163 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		1C563EAD204A7856007EA163 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		1C563EAF204A819B007EA163 /* CreateHaircutSessionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHaircutSessionScreen.swift; sourceTree = "<group>"; };
+		1C911765205786B700F97C72 /* BusinessInfoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInfoScreen.swift; sourceTree = "<group>"; };
+		1C91176720579E5300F97C72 /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
 		1CD588FC2047C8B00033D957 /* HaircutApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaircutApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD588FF2047C8B00033D957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CD589042047C8B00033D957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 			children = (
 				1CD588FF2047C8B00033D957 /* AppDelegate.swift */,
 				1CD589032047C8B00033D957 /* Main.storyboard */,
+				1C91176720579E5300F97C72 /* SettingScreen.swift */,
+				1C911765205786B700F97C72 /* BusinessInfoScreen.swift */,
 				1CD589302047D4440033D957 /* LoginScreen.swift */,
 				1C563EAB204A68C5007EA163 /* HomeScreen.swift */,
 				1C563EAF204A819B007EA163 /* CreateHaircutSessionScreen.swift */,
@@ -494,11 +500,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C91176820579E5300F97C72 /* SettingScreen.swift in Sources */,
 				CB4D99A9205073100077D9A4 /* HaircutVenueService.swift in Sources */,
 				1C563EAC204A68C5007EA163 /* HomeScreen.swift in Sources */,
 				1CD589002047C8B00033D957 /* AppDelegate.swift in Sources */,
 				1CD589312047D4440033D957 /* LoginScreen.swift in Sources */,
 				1C253046204929BF000402C0 /* SignUpScreen.swift in Sources */,
+				1C911766205786B700F97C72 /* BusinessInfoScreen.swift in Sources */,
 				1C563EB0204A819B007EA163 /* CreateHaircutSessionScreen.swift in Sources */,
 				1C563EAE204A7856007EA163 /* ProfileScreen.swift in Sources */,
 				1C00A613204E74D50090E0F9 /* Barbers.swift in Sources */,

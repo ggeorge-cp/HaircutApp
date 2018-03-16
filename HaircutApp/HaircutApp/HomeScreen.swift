@@ -25,19 +25,27 @@ class HomeScreen: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
     var regionQuery : GFRegionQuery?
     var currentLat : Double?
     var currentLong : Double?
-    let coordinatesSLO = CLLocationCoordinate2D(latitude: 35.2828, longitude: -120.6596)
-    let barberData = "https://api.foursquare.com/v2/venues/search?client_id=ZKJ1MMDJU5SI5JL10UDBLDWLDSB0ZHCWXZFMRASNX1RBIB1A&client_secret=KCMAVC1ZZFSQS25TIUDE4KTGFPVEFZOXYB13PWC5X3UBCKIV&ll=35.3,-120.6&query=barber&v=20180301"
+    var barberData : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureLocationManager()
+        
         databaseRef = Database.database().reference().child("response")
+        geoFire = GeoFire(firebaseRef: Database.database().reference().child("GeoFire"))
         mapView.delegate = self
         
-        geoFire = GeoFire(firebaseRef: Database.database().reference().child("GeoFire"))
+        let roundedLat = Int(currentLat ?? 0)
+        let roundedLong = Int(currentLong ?? 0)
+        
+        barberData = "https://api.foursquare.com/v2/venues/search?client_id=ZKJ1MMDJU5SI5JL10UDBLDWLDSB0ZHCWXZFMRASNX1RBIB1A&client_secret=KCMAVC1ZZFSQS25TIUDE4KTGFPVEFZOXYB13PWC5X3UBCKIV&ll=\(roundedLat),\(roundedLong)&query=barber&v=20180301"
+        
+        print("!!!!!!!!!!!!!!!")
+        print(barberData!)
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
-        let request = URLRequest(url: URL(string: barberData)!)
+        let request = URLRequest(url: URL(string: barberData!)!)
         
         let task: URLSessionDataTask = session.dataTask(with: request)
         { (receivedData, response, error) -> Void in
@@ -59,13 +67,6 @@ class HomeScreen: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
             }
         }
         task.resume()
-        
-        configureLocationManager()
-        
-        
-        let span = MKCoordinateSpan(latitudeDelta: 3, longitudeDelta: 3)
-        let newRegion = MKCoordinateRegion(center: coordinatesSLO, span: span)
-        mapView.setRegion(newRegion, animated: true)
         
         oneTimeInit()
     }
@@ -107,27 +108,13 @@ class HomeScreen: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
             currentLat = loc.coordinate.latitude
             currentLong = loc.coordinate.longitude
             
-            let center = CLLocationCoordinate2D(latitude: loc.coordinate.latitude, longitude: loc.coordinate.longitude)
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            let center = CLLocationCoordinate2D(latitude: currentLat!, longitude: currentLong!)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
             
             self.mapView.setRegion(region, animated: true)
         }
     }
-    /*
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        //let location = locations.last as! CLLocation
-        guard let location: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        
-        print("--------")
-        print(location.latitude)
-        print(location.longitude)
-        
-        //let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        //let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        
-        //self.mapView.setRegion(region, animated: true)
-    }
-    */
+    
     func configureLocationManager() {
         CLLocationManager.locationServicesEnabled()
         locationManager.requestWhenInUseAuthorization()
